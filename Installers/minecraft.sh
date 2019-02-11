@@ -6,7 +6,7 @@ echo "Installing Minecraft. This may take a while. Please be patient..."
 cd ~
 
 # Turned wget to syntax "wget foo -O bar"
-wget https://github.com/NextThingCo/chipcraft/archive/master.zip -O ~/master.zip
+wget https://github.com/ntc-chip-revived/chipcraft/archive/master.zip -O ~/master.zip
 
 # Unzip bar
 unzip ~/master.zip
