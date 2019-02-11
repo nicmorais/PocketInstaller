@@ -2,7 +2,7 @@
 
 This project creates an emulator/games installer GUI for Next Thing Co's (@NextThingCo) Pocket C.H.I.P. 
 
-![Image](https://github.com/IkerGarcia/PocketInstaller/blob/master/logo.png) 
+![Image](https://i.imgur.com/HgHau3P.png) 
 
 Although the idea is to make a push and install interface, during the first versions still some manual installations will be needed. Just read the how-to file to gain information about this and how to use PocketInstaller. 
 
