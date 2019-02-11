@@ -11,20 +11,19 @@ exec &> >(tee -a log.txt)
 sudo apt-mark hold -qq  pocket-home
 
 echo "Looking for updates"
-wget -O /tmp/package.txt 'http://pocketinstaller.damianvila.com/package.txt'
-cat /tmp/package.txt | head -1 > /tmp/version
-cat /tmp/package.txt | tail -1 > /tmp/link
-(diff /tmp/version /home/chip/.PocketInstaller/.version && echo 'Already up-to-date.') || exec ./update.sh
+git pull
 
 if hash zenity 2>/dev/null; then
   :
 else
   sudo apt-get update
+  echo "Installing Zenity"
   sudo apt-get install -y zenity
 fi
 if hash jq 2>/dev/null; then
   :
 else
+echo "Installing jq"
  sudo apt-get update
  sudo apt-get install -y jq
 fi
@@ -36,6 +35,7 @@ else
   sudo dpkg -i bunsen-keyring_20*.deb
   echo "#key added" | sudo tee -a /etc/apt/sources.list
   sudo apt-get update
+  echo "Installing YAD"
   sudo apt-get install -y yad
 fi
 if grep -Fxq "deb http://pkg.bunsenlabs.org/debian bunsen-hydrogen  main" /etc/apt/sources.list && grep -Fxq "#key added" /etc/apt/sources.list; then
