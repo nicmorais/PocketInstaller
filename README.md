@@ -3,7 +3,11 @@
 This project creates an emulator/games installer GUI for Next Thing Co's (@NextThingCo) Pocket C.H.I.P. 
 
 ![Image](https://i.imgur.com/HgHau3P.png) 
-
+```
+    cd ~
+    git clone https://github.com/nicmorais/PocketInstaller
+    ./PocketInstaller/PocketInstaller.sh
+```
 Although the idea is to make a push and install interface, during the first versions still some manual installations will be needed. Just read the how-to file to gain information about this and how to use PocketInstaller. 
 
 [YAD](https://sourceforge.net/projects/yad-dialog/) is used for the interface:
