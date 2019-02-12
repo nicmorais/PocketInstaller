@@ -8,7 +8,7 @@ sudo chmod 777 log.txt
 exec &> >(tee -a log.txt)
 
 echo "Looking for updates"
-git pull
+bash update.sh
 
 sudo apt-mark hold -qq  pocket-home
 
