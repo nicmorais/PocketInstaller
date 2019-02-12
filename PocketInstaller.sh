@@ -1,17 +1,16 @@
 #!/bin/bash
 
 cd ~/PocketInstaller
-
 #sudo rm -R -f log.txt
 echo "Welcome to PocketInstaller" | sudo tee log.txt
 
 sudo chmod 777 log.txt
 exec &> >(tee -a log.txt)
 
-sudo apt-mark hold -qq  pocket-home
-
 echo "Looking for updates"
 git pull
+
+sudo apt-mark hold -qq  pocket-home
 
 if hash zenity 2>/dev/null; then
   :
