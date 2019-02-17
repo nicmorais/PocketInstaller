@@ -3,15 +3,16 @@
 echo "Installing XU4 (Ultima IV). This may take a while. Please be patient..."
 
 # Install XU4: play classic Ultima IV on current hardware
-sudo apt-get update
-sudo apt-get install -y build-essential subversion libxml2-dev libsdl-mixer1.2-dev
+
+sudo apt-get install -y build-essential subversion libsdl1.2-dev libxml2-dev libsdl-mixer1.2 libsdl-mixer1.2-dev timidity
 
 # Get code
-svn checkout https://svn.code.sf.net/p/xu4/code/trunk /home/chip/xu4-code
-cp -p /usr/local/bin/pocketinstaller/Installers/xu4.patch /home/chip/xu4-code/u4/src
-cd /home/chip/xu4-code/u4/src
-wget -O ultima4.zip http://www.ultima-universe.com/downloads/ultima4v101.zip
-wget -O u4upgrad.zip https://downloads.sourceforge.net/project/xu4/Ultima%204%20VGA%20Upgrade/1.3/u4upgrad.zip
+cd ~
+svn checkout https://svn.code.sf.net/p/xu4/code/trunk ~/xu4-code
+cp -p PocketInstaller/Installers/xu4.patch ~/xu4-code/u4/src
+cd ~/xu4-code/u4/src
+wget -O ultima4.zip http://ultima.thatfleminggent.com/ultima4.zip
+wget -O u4upgrad.zip http://prdownloads.sourceforge.net/xu4/u4upgrad.zip?download
 
 # Patch
 patch -p0 < xu4.patch
@@ -40,4 +41,8 @@ if test -f ~/.pocket-home/.version; then
   fi
 fi
 
-echo "XU4 (Ultima IV) installed. Have fun!"
+echo -e '\nXU4 (Ultima IV) installed. Have fun!\n'
+echo -e 'While in the Main Menu, press C to configure,'
+echo 'then, enter Video Options to enable fullscreen.'
+echo -e 'Press ALT+X to quit the game."
+sleep 2
