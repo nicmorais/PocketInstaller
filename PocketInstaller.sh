@@ -156,8 +156,12 @@ if hash fceux 2>/dev/null; then
 else
   P21="FCEUX(NES)|Installers/fceux.sh"
 fi
-
-menu=($P1 $P2 $P3 $P4 $P5 $P6 $P7 $P8 $P9 $P10 $P11 $P12 $P13 $P14 $P15 $P16 $P17 $P18 $P19 $P20 $P21)
+if [ -f NXEngine/nx ]; then
+  :
+else
+  P22="CaveStory|Installers/cavestory.sh"
+fi
+menu=($P1 $P2 $P3 $P4 $P5 $P6 $P7 $P8 $P9 $P10 $P11 $P12 $P13 $P14 $P15 $P16 $P17 $P18 $P19 $P20 $P21 $P22)
 
 yad_opts=(--form
 --scroll
