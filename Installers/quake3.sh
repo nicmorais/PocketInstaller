@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install -y git
 
 # Get code
-git clone https://github.com/xobs/ioquake3-gles
+git clone http://chip.jfpossibilities.com/gits/ioquake3-gles.git ioquake3-gles
 
 # Change Directory
 cd ioquake3-gles
