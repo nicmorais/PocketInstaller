@@ -6,8 +6,32 @@ This project creates an emulator/games installer GUI for Next Thing Co's (@NextT
 ```
 cd ~
 git clone https://github.com/nicmorais/working-PocketInstaller PocketInstaller
+sudo chmod -R +x PocketInstaller
 ./PocketInstaller/PocketInstaller.sh
 ```
+**Options:**
+- Mednafen (GB,GBA,NES,SNES,NPC)
+- Vice (C64,C128)
+- Doom
+- OpenTTD
+- DOSBox
+- ScummVM
+- PCSX (PSX)
+- GnGeo (NeoGeo)
+- Zoom (Z-machine)
+- BSDgames
+- Minecraft (Chipcraft)
+- QuakeIII/Openarena
+- RetroArch
+- XU4 (Ultima IV)
+- Freedroid
+- ColEm (Coleco)
+- ZEsarUX (ZX Spectrum)
+- Gargoyle
+- Lectrote
+- FCEUX (NES)
+- Cave Story
+
 Although the idea is to make a push and install interface, during the first versions still some manual installations will be needed. Just read the how-to file to gain information about this and how to use PocketInstaller. 
 
 [YAD](https://sourceforge.net/projects/yad-dialog/) is used for the interface:
