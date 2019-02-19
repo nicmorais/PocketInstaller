@@ -1,2 +1,2 @@
 #!/bin/bash
-./home/$USER/NXEngine/nx && exit
+cd ~/NXEngine && ./nx
