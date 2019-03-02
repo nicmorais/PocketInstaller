@@ -33,6 +33,7 @@ sudo chmod -R +x PocketInstaller
 - Cave Story
 - Snes9x
 - Quake 1
+
 Although the idea is to make a push and install interface, during the first versions still some manual installations will be needed. Just read the how-to file to gain information about this and how to use PocketInstaller. 
 
 [YAD](https://sourceforge.net/projects/yad-dialog/) is used for the interface:
