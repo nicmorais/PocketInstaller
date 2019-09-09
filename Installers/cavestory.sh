@@ -1,5 +1,11 @@
 #!/bin/bash
 echo "Installing Cave Story"
+
+if [ ! -f "/tmp/aptuptodate" ]; then
+sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt-get install libsdl-ttf2.0-dev build-essential -y
 cd ~
 git clone https://github.com/nicmorais/Pocket-NXEngine NXEngine
