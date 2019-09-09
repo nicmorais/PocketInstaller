@@ -3,7 +3,11 @@
 echo "Installing ColEm. This may take a while. Please be patient..."
 
 # Update and install dependencies
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt-get install -y build-essential zlib1g-dev libx11-dev libxext-dev unrar
 
 # Zeroing working directory
