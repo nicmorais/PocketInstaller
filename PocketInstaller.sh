@@ -12,20 +12,29 @@ bash update.sh
 
 sudo apt-mark hold -qq  pocket-home
 
+updatecheck(){
+if [ ! -f "/tmp/aptuptodate" ]; then
+sudo apt-get update
+touch /tmp/aptuptodate
+fi
+}
+
 if hash zenity 2>/dev/null; then
   :
 else
-  sudo apt-get update
+  updatecheck
   echo "Installing Zenity"
   sudo apt-get install -y zenity
 fi
+
 if hash jq 2>/dev/null; then
   :
 else
 echo "Installing jq"
- sudo apt-get update
+ updatecheck
  sudo apt-get install -y jq
 fi
+
 if hash yad 2>/dev/null; then
   :
 else
@@ -33,16 +42,17 @@ else
   sudo wget https://eu.pkg.bunsenlabs.org/debian/pool/main/b/bunsen-keyring/bunsen-keyring_2019.01.19%2Bbl9-2_all.deb
   sudo dpkg -i bunsen-keyring_20*.deb
   echo "#key added" | sudo tee -a /etc/apt/sources.list
-  sudo apt-get update
+  updatecheck
   echo "Installing YAD"
   sudo apt-get install -y yad
 fi
+
 if grep -Fxq "deb http://pkg.bunsenlabs.org/debian bunsen-hydrogen  main" /etc/apt/sources.list && grep -Fxq "#key added" /etc/apt/sources.list; then
   :
 else
   sudo wget https://eu.pkg.bunsenlabs.org/debian/pool/main/b/bunsen-keyring/bunsen-keyring_2019.01.19%2Bbl9-2_all.deb
   sudo dpkg -i bunsen-keyring_20*.deb
-  sudo apt-get update
+  updatecheck
   echo "#key added" | sudo tee -a /etc/apt/sources.list
 fi
 
