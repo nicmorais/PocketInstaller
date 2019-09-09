@@ -3,7 +3,11 @@
 echo "Installing Zoom. This may take a while. Please be patient..."
 
 # Updating
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt-get install -y build-essential
 
 # Install Zoom: interactive fiction parser for Z-machine

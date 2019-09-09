@@ -3,6 +3,10 @@
 echo "Installing XU4 (Ultima IV). This may take a while. Please be patient..."
 
 # Install XU4: play classic Ultima IV on current hardware
+if [ ! -f "/tmp/aptuptodate" ]; then
+sudo apt-get update
+touch /tmp/aptuptodate
+fi
 
 sudo apt-get install -y build-essential subversion libsdl1.2-dev libxml2-dev libsdl-mixer1.2 libsdl-mixer1.2-dev timidity
 
@@ -44,5 +48,5 @@ fi
 echo -e '\nXU4 (Ultima IV) installed. Have fun!\n'
 echo -e 'While in the Main Menu, press C to configure,'
 echo 'then, enter Video Options to enable fullscreen.'
-echo -e 'Press ALT+X to quit the game."
+echo -e 'Press ALT+X to quit the game.'
 sleep 2

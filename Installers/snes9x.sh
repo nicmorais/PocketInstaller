@@ -1,7 +1,12 @@
 #!/bin/bash
 
 cd ~
-sudo apt-get install libsdl1.2-dev build-essential  git --no-install-recommends
+if [ ! -f "/tmp/aptuptodate" ]; then
+sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
+sudo apt-get install -y libsdl1.2-dev build-essential  git --no-install-recommends
 git clone https://github.com/nicmorais/PocketSNES
 cd PocketSNES
 make

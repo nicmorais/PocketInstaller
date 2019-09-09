@@ -1,6 +1,10 @@
 #!/bin/bash
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
-sudo apt-get install git alsa-oss build-essential libsdl1.2-dev game-data-packager cdparanoia vorbis-tools lhasa --no-install-recommends
+touch /tmp/aptuptodate
+fi
+
+sudo apt-get install -y git alsa-oss build-essential libsdl1.2-dev game-data-packager cdparanoia vorbis-tools lhasa --no-install-recommends
 game-data-packager quake -s
 sudo dpkg -i quake*.deb
 cd ~

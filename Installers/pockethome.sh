@@ -1,6 +1,10 @@
 #!/bin/bash
 
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt install -y xinput-calibrator
 
 sudo wget -O install-pockethome http://bit.ly/29uWueR

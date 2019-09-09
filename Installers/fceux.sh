@@ -1,6 +1,10 @@
 #!/bin/bash
 echo "Installing FCEUX. This may take a while. Please be patient..."
-sudo apt update
+if [ ! -f "/tmp/aptuptodate" ]; then
+sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt install fceux
 # set audio quality from high to low to prevent lagging
 sed -i '275s/1/0/' ~/.fceux/fceux.cfg

@@ -3,7 +3,11 @@
 echo "Installing ZEsarUX. This may take a while. Please be patient..."
 
 # Update and install dependencies
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt-get install -y build-essential gcc g++ libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
 
 # Zeroing working directoy

@@ -3,7 +3,11 @@
 echo "Installing Gargoyle. This may take a while. Please be patient..."
 
 # Update
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 
 # Create and set directories
 CHIP_STORY_LOCATION=/usr/local/share/IF

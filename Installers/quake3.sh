@@ -3,7 +3,11 @@
 echo "Installing OpenArena (Quake 3). This may take a while. Please be patient..."
 
 # Update and install
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt-get install -y git
 
 # Get code

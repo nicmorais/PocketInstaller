@@ -6,7 +6,11 @@ echo "Installing RetroArch. This may take a while. Please be patient..."
 cd ~
 
 # Update and install
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt-get install -y build-essential git pkg-config libsdl2-dev libsdl1.2-dev
 
 # Clone project

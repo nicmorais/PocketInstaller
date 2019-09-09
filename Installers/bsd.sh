@@ -3,13 +3,12 @@
 echo "Installing BSD Games. This may take a while. Please be patient..."
 
 # Update and install
-updatecheck(){
+
 if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
 touch /tmp/aptuptodate
 fi
-}
-updatecheck
+
 sudo apt-get install -y bsdgames bsdgames-nonfree
 
 # BSD Games icon

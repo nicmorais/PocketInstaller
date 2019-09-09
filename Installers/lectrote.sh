@@ -15,7 +15,11 @@ sudo chown -R chip "$CHIP_STORY_LOCATION"
 #sudo apt-get install -y git libnss3 nodejs
 
 # Update and install Lectrote: interactive fiction parser for Z-machine, Glulx, & Hugo
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y git libnss3 nodejs nodejs-legacy npm
 

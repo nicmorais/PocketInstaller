@@ -3,7 +3,11 @@
 echo "Installing OpenTTD. This may take a while. Please be patient..."
 
 # Update and install
+if [ ! -f "/tmp/aptuptodate" ]; then
 sudo apt-get update
+touch /tmp/aptuptodate
+fi
+
 sudo apt-get install -y openttd
 
 # OpenTTD icon
